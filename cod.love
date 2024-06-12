@@ -1,0 +1,28 @@
+import java.util.Random;
+
+public class GeradorPoemas {
+
+    private static final String[] ADJETIVOS = {"amoroso", "doce", "ardente", "apaixonado", "sedutor", "eterno", "gentil", "belo", "sensível", "encantador"};
+    private static final String[] SUBSTANTIVOS = {"amor", "coração", "suspiro", "encanto", "paixão", "sonho", "desejo", "afeto", "ternura", "carinho"};
+    private static final String[] VERBOS = {"suspira", "encanta", "atrai", "seduz", "encoraja", "abraça", "acaricia", "envolve", "enlaça", "ilumina"};
+
+    public static void main(String[] args) {
+        // Gerar 5 poemas aleatórios
+        for (int i = 0; i < 5; i++) {
+            System.out.println(gerarPoema());
+            System.out.println();
+        }
+    }
+
+    public static String gerarPoema() {
+        Random rand = new Random();
+        String adjetivo = ADJETIVOS[rand.nextInt(ADJETIVOS.length)];
+        String substantivo = SUBSTANTIVOS[rand.nextInt(SUBSTANTIVOS.length)];
+        String verbo = VERBOS[rand.nextInt(VERBOS.length)];
+        String poema = "Oh " + adjetivo + " " + substantivo + ",\n" +
+                       "Como te " + verbo + " meu coração,\n" +
+                       "Em um eterno e doce " + substantivo + ",\n" +
+                       "Floresce nossa paixão.";
+        return poema;
+    }
+}
